@@ -1,5 +1,5 @@
-import { db } from "../db/db";
-import { Product } from "../types/Product";
+import { db } from "../db/db.ts";
+import type { Product } from "../types/Product.ts";
 
 export class ProductModel {
     static getAll(): Promise<Product[]> {
@@ -22,8 +22,8 @@ export class ProductModel {
         return new Promise((resolve, reject) => {
             db.run(
                 `
-                INSERT INTO
-                (name, description, category, size, style, color, price, stock, image, active)
+                INSERT INTO products
+                (name, description, category, size, style, color, price, stock, image_url, active)
                 VALUES (?,?,?,?,?,?,?,?,?,?)
                 `,
                 [
@@ -35,11 +35,13 @@ export class ProductModel {
                     product.color,
                     product.price,
                     product.stock,
-                    product.image,
+                    product.image_url,
                     product.active,
                 ],
                 function (err) {
                     if(err) {
+                        console.error(err);
+                        console.error(err.message);
                         return reject(err);
                     }
 

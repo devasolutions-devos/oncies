@@ -8,6 +8,7 @@ export interface Product {
     color: string,
     price: number,
     stock: number,
-    image: string,
+    image_url: string,
     active: boolean
-}
+};
+

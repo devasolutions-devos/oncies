@@ -1,3 +1,3 @@
 import sqlite3 from "sqlite3";
 
-export const db = new sqlite3.Database("jdbc:sqlite:oncies.sqlite");
+export const db = new sqlite3.Database("../oncies.sqlite");

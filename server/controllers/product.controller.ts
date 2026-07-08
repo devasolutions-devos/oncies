@@ -1,5 +1,5 @@
-import {Request, Response} from "express";
-import { ProductModel } from "../models/product.model";
+import type {Request, Response} from "express";
+import { ProductModel } from "../models/product.model.ts";
 
 export class ProductController {
 
@@ -27,9 +27,13 @@ export class ProductController {
 
             res.status(201).json({ id });
 
-        } catch {
+        } catch (err){
 
-            res.sendStatus(500);
+            console.error(err);
+            res.status(500).json({
+                message: "Internal Server Error",
+                error: err
+            });
 
         }
 
