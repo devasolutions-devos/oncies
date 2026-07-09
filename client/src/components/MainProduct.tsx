@@ -9,12 +9,8 @@ function MainProduct({product_id}: MainProductProps) {
         console.log("added to cart", product_id);
     }
 
-    //FETCH from api
-    /*
-
-    IMPLEMENT FETCH
-
-    */
+    //FETCH from
+    
     return (
         <div>
             <img src="https://placehold.co/500x500/png"/>
