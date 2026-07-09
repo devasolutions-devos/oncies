@@ -1,9 +1,9 @@
+import MainProduct from "./components/MainProduct";
+
 function App() {
-  return(
-    <div>
-      <img src="https://placehold.co/1000x1000/png"></img>
-    </div>
-  )
+    return(
+        <MainProduct product_id={1}/>
+    )
 }
 
 export default App
